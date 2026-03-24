@@ -11,7 +11,7 @@ QDRANT_PORT = 6333
 
 EMBED_MODEL = "nomic-ai/nomic-embed-text-v1.5"
 
-TOP_K = 8
+TOP_K = 3
 
 
 print("Cargando modelo de embeddings...")

@@ -1,0 +1,4 @@
+pypdf==6.9.0
+qdrant_client==1.17.1
+sentence_transformers==5.1.2
+tiktoken==0.12.0
