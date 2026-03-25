@@ -40,12 +40,12 @@ project/
 
 ```bash
 # Crear colecion qdrant + contenedor, ejecutar solo la primera vez
- docker run -d --name qdrant -p 6333:6333 -p 6334:6334 -v ${PWD}/qdrant_storage:/qdrant/storage qdrant/qdrant:latest
+   docker run -d --name qdrant -p 6333:6333 -p 6334:6334 -v ${PWD}/qdrant_storage:/qdrant/storage qdrant/qdrant:latest
 # Comprobar que se creo el contenedor
- docker ps
+   docker ps
 # Ya esta listo para ejecutar, ahora si quieres parar el contenedor o volverlo a arrancar
- docker stop qdrant # ponemos qdrant porque es el nombre que indicamos en el primer comando
- docker start qdrant # si apagamos el ordenador con poner este comando ya se arranca el ordenador, no hay que volver a poner el primer comando
+   docker stop qdrant # ponemos qdrant porque es el nombre que indicamos en el primer comando
+   docker start qdrant # si apagamos el ordenador con poner este comando ya se arranca el ordenador, no hay que volver a poner el primer comando
 
 # Para hacer un Backup copiar la carpeta qdrant_storage e indexer_state.json (se puede hacer a mano pero parando antes e iniciando despues el contenedor) 
     docker stop qdrant
@@ -55,7 +55,10 @@ project/
 # Ver contenedores
     docker ps        # activos
     docker ps -a     # todos
-```
+
+# Para crear otro contenedor copiar el codigo en otra carpeta y ejecutar el primer comando cambiando nombre puertos y el puerto en el codigo (ejemplo)
+    docker run -d --name qdrant_Prueba -p 6335:6333 -p 6336:6334 -v ${PWD}/qdrant_Prueba:/qdrant/storage qdrant/qdrant:latest
+    qdrant_port:       int = 6335 #modificacion en el codigo indexer.py
 
 Verificar que está corriendo:
 ```bash
